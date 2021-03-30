@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--通过setter注入-->
+    <bean id="helloWord" class="com.neo.spring.HelloWord">
+    <property name="name" value="zxg"></property>
+    </bean>
+    <!--通过构造方法来配置bean的属性-->
+    <bean id="car" class="com.neo.spring.Car">
+        <constructor-arg value="宝马" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="白色" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="200000" type="int"></constructor-arg>
+    </bean>
+    <!--通过构造方法来配置bean的属性-->
+    <bean id="car1" class="com.neo.spring.Car">
+        <constructor-arg value="奥迪" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="红色" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="200000" type="double"></constructor-arg>
+    </bean>
+</beans>

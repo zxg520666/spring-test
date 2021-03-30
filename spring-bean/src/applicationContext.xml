@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--setter注入bean属性-->
+    <bean id="persion" class="com.neo.spring.Persion">
+        <property name="name" value="小光"></property>
+        <property name="age" value="28"></property>
+        <property name="car" ref="car"></property>
+    </bean>
+    <!--构造器注入bean属性-->
+    <bean id="car" class="com.neo.spring.Car">
+        <constructor-arg>
+            <value type="java.lang.String">宝马</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value type="java.lang.String">白色</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value type="int">80000000</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="persion1" class="com.neo.spring.Persion">
+        <property name="name" value="小微"></property>
+        <property name="age" value="16"></property>
+        <property name="car">
+            <!--内部bean的构建-->
+            <bean id="car1" class="com.neo.spring.Car">
+                <constructor-arg value="奥迪" type="java.lang.String"></constructor-arg>
+                <constructor-arg value="黑色" type="java.lang.String"></constructor-arg>
+                <constructor-arg value="666666" type="int"></constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+     <bean id="persion" class="com.neo.spring.Persion">
+         <property name="name" value="zhang"></property>
+         <property name="age" value="28"></property>
+         <property name="carList" ref="carList"></property>
+     </bean>
+     <util:list id="carList">
+      <ref bean="car"></ref>
+      <ref bean="car1"></ref>
+     </util:list>
+    <bean id="car" class="com.neo.spring.Car">
+        <property name="name" value="宝马"></property>
+        <property name="color" value="白色"></property>
+        <property name="preace" value="99900"></property>
+     </bean>
+    <bean id="car1" class="com.neo.spring.Car">
+        <property name="name" value="宝马1"></property>
+        <property name="color" value="白色1"></property>
+        <property name="preace" value="999001"></property>
+    </bean>
+</beans>
