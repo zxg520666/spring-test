@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="persion" class="com.neo.spring.Persion">
+            <property name="name" value="#{'张上'}"></property>
+            <property name="age" value="#{15}"></property>
+            <!--使用Spel 来应用其他的bean-->
+            <property name="car" value="#{car}"></property>
+        </bean>
+
+        <bean id="car" class="com.neo.spring.Car">
+            <property name="name" value="#{'奥迪'}"></property>
+            <property name="color" value="#{book.name}"></property>
+            <!--使用Spel 引用类的静态属性-->
+            <property name="perce" value="#{T(java.lang.Math).PI*80}"></property>
+        </bean>
+
+        <bean id="book" class="com.neo.spring.Book">
+            <property name="name" value="西游记"></property>
+            <property name="prece" value="#{persion.age>16?'男':'女'}"></property>
+        </bean>
+</beans>
