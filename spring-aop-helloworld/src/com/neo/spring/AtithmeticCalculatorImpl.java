@@ -10,6 +10,7 @@ public class AtithmeticCalculatorImpl implements AtithmeticCalculator {
         System.out.println("The method add begins with["+i+","+j+"]");
         int result=i+j;
         System.out.println("The method add ends with"+result);
+        System.out.println("hahahsh");
         return result;
     }
 
